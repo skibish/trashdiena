@@ -15,6 +15,8 @@ type Configuration struct {
 	PathToFileWithTrash string
 }
 
+// TODO: Each cmd can have it's own flags, currently we parse all for everyone wich is not user friendly
+
 // Parse parses all the flags and environment variables
 func Parse() (c Configuration) {
 	// API
