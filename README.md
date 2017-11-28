@@ -17,3 +17,10 @@ Directory structure is following:
 ├── pkg         # All the packages that are mandatory for apps and can be shared
 └── vendor      # Vendor dependencies
 ```
+
+Binaries:
+
+ * authorizer - Do authorization with Slack and save credentials. Open to the web.
+ * scheduler - Distribute trash accross registered Slack hooks in the system in specific time.
+ * loader - Separate binary to load trash in the DB
+ 
