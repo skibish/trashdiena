@@ -11,4 +11,5 @@ RUN dep ensure && CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o tra
 
 FROM scratch
 COPY --from=builder /go/src/bitbucket.org/skibish/trashdiena/trashdiena .
+EXPOSE 80
 ENTRYPOINT [ "/trashdiena" ]

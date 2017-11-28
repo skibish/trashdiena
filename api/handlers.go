@@ -5,8 +5,8 @@ import (
 	"log"
 	"net/http"
 
-	uuid "github.com/satori/go.uuid"
 	"bitbucket.org/skibish/trashdiena/storage"
+	uuid "github.com/satori/go.uuid"
 )
 
 func (a *API) handlerInit(w http.ResponseWriter, r *http.Request) {
@@ -14,6 +14,7 @@ func (a *API) handlerInit(w http.ResponseWriter, r *http.Request) {
 
 	resp, err := a.slackClient.OAuthAccess(code)
 	if err != nil {
+		log.Printf("ERR: %v\n", err)
 		return
 	}
 
