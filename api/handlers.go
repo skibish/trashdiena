@@ -32,6 +32,7 @@ func (a *API) handlerInit(w http.ResponseWriter, r *http.Request) {
 	return
 }
 
+// SHOULD NOT BE PUBLIC (currently)
 func (a *API) handlerCreate(w http.ResponseWriter, r *http.Request) {
 	b, err := ioutil.ReadAll(r.Body)
 	if err != nil {

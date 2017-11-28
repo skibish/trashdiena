@@ -39,6 +39,28 @@ func main() {
 	sc := slack.New(*clientID, *clientSecret, *redirectURL)
 	sg := storage.New(fbase)
 
+	// Uncomment to load trash from .csv file
+	// Almost the same logic as in handlers.go handlerCreate
+	// file, _ := os.Open("trash.csv")
+	// r := csv.NewReader(file)
+
+	// for {
+	// 	record, err := r.Read()
+	// 	if err == io.EOF {
+	// 		break
+	// 	}
+	// 	if err != nil {
+	// 		log.Fatal(err)
+	// 	}
+
+	// 	err = sg.Trash.Set(&storage.TrashData{
+	// 		ID:        uuid.NewV4().String(),
+	// 		Data:      record[0],
+	// 		Published: false,
+	// 	})
+	// }
+	// return
+
 	var a *api.API
 	// if we start application as API, then try to start it async
 	if *startAs == "api" {
