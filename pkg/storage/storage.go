@@ -1,6 +1,6 @@
 package storage
 
-import "bitbucket.org/skibish/trashdiena/firebase"
+import "bitbucket.org/skibish/trashdiena/pkg/firebase"
 
 // Storage describe storage
 type Storage struct {

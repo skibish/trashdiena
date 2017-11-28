@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"bitbucket.org/skibish/trashdiena/firebase"
+	"bitbucket.org/skibish/trashdiena/pkg/firebase"
 )
 
 const workspacePath = "workspace"

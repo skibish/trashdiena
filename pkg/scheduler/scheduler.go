@@ -7,7 +7,7 @@ import (
 	"net/http"
 	"time"
 
-	"bitbucket.org/skibish/trashdiena/storage"
+	"bitbucket.org/skibish/trashdiena/pkg/storage"
 )
 
 // Scheduler describe scheduler
