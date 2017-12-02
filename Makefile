@@ -6,7 +6,7 @@ VERSION = 1.1.0
 .DEFAULT_GOAL := help
 
 test: ## run tests
-	go test -v -cover -race `go list ./... | grep -v /vendor/`
+	go test -cover -race `go list ./... | grep -v /vendor/ | grep -v /cmd/`
 
 build: ## build binaries for distribution
 	docker build -t skibish/trashdiena:latest -t skibish/trashdiena:${VERSION} .
