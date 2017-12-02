@@ -1,5 +1,12 @@
 # Trashdiena
 
+Trashdiena was born from the Latvian word "Trešdiena", which means "Wednesday".
+
+Because "Treš" part sounds as "Trash" in English, the day when IT jokes (and not only) in English and Russian languages were shared in the chat was named "Trashdiena".
+
+And this is how this bot was born. Every Wednesday in the Slack channel of your choice will be delivered some trash that is NSFW (mostly). This trash will ruin your productivity. You will love it.
+
+Enjoy!
 
 ## Development
 
