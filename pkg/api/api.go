@@ -4,8 +4,8 @@ import (
 	"context"
 	"net/http"
 
-	"bitbucket.org/skibish/trashdiena/pkg/slack"
-	"bitbucket.org/skibish/trashdiena/pkg/storage"
+	"github.com/skibish/trashdiena/pkg/slack"
+	"github.com/skibish/trashdiena/pkg/storage"
 )
 
 // API is a structure that contains API for the bot

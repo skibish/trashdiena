@@ -8,8 +8,8 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"bitbucket.org/skibish/trashdiena/pkg/slack"
-	"bitbucket.org/skibish/trashdiena/pkg/storage"
+	"github.com/skibish/trashdiena/pkg/slack"
+	"github.com/skibish/trashdiena/pkg/storage"
 )
 
 type mockFirebase struct {

@@ -5,12 +5,12 @@ import (
 	"os"
 	"os/signal"
 
-	"bitbucket.org/skibish/trashdiena/pkg/config"
+	"github.com/skibish/trashdiena/pkg/config"
 
-	"bitbucket.org/skibish/trashdiena/pkg/api"
-	"bitbucket.org/skibish/trashdiena/pkg/firebase"
-	"bitbucket.org/skibish/trashdiena/pkg/slack"
-	"bitbucket.org/skibish/trashdiena/pkg/storage"
+	"github.com/skibish/trashdiena/pkg/api"
+	"github.com/skibish/trashdiena/pkg/firebase"
+	"github.com/skibish/trashdiena/pkg/slack"
+	"github.com/skibish/trashdiena/pkg/storage"
 )
 
 func main() {

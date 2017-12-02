@@ -3,10 +3,10 @@ package main
 import (
 	"log"
 
-	"bitbucket.org/skibish/trashdiena/pkg/config"
-	"bitbucket.org/skibish/trashdiena/pkg/firebase"
-	"bitbucket.org/skibish/trashdiena/pkg/scheduler"
-	"bitbucket.org/skibish/trashdiena/pkg/storage"
+	"github.com/skibish/trashdiena/pkg/config"
+	"github.com/skibish/trashdiena/pkg/firebase"
+	"github.com/skibish/trashdiena/pkg/scheduler"
+	"github.com/skibish/trashdiena/pkg/storage"
 )
 
 func main() {

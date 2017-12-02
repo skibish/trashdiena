@@ -4,7 +4,7 @@ import (
 	"log"
 	"net/http"
 
-	"bitbucket.org/skibish/trashdiena/pkg/storage"
+	"github.com/skibish/trashdiena/pkg/storage"
 )
 
 func (a *API) handlerInit(w http.ResponseWriter, r *http.Request) {
