@@ -11,7 +11,7 @@ const workspacePath = "workspace"
 
 // Workspace describes all the configuration of the workspace
 type Workspace struct {
-	firebase *firebase.Firebase
+	firebase firebase.IFirebase
 }
 
 // WorkspaceData decsibe WorkspaceData info

@@ -82,7 +82,7 @@ func (s *Scheduler) publish() (err error) {
 		return
 	}
 
-	// get not published trash mark it as published and
+	// get not published trash, mark it as published and
 	// save to the database
 	var trash string
 	for _, v := range trashs {

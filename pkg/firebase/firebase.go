@@ -14,6 +14,12 @@ type Firebase struct {
 	realFirebase *firego.Firebase
 }
 
+// IFirebase is an interface that Firebase is implementing
+type IFirebase interface {
+	Set(path string, v interface{}) (err error)
+	Get(path string) (result json.RawMessage, err error)
+}
+
 // New return new instance of the Firebase
 func New(firebaseDB, secretsFilePath string) (fbase *Firebase, err error) {
 	d, err := ioutil.ReadFile(secretsFilePath)

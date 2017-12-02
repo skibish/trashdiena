@@ -11,7 +11,7 @@ const trashPath = "trash"
 
 // Trash is struct shortuct
 type Trash struct {
-	firebase *firebase.Firebase
+	firebase firebase.IFirebase
 }
 
 // TrashData decsibe trash data container

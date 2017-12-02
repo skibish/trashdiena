@@ -9,7 +9,7 @@ type Storage struct {
 }
 
 // New return new Storage
-func New(firebase *firebase.Firebase) *Storage {
+func New(firebase firebase.IFirebase) *Storage {
 	return &Storage{
 		Workspace: &Workspace{firebase: firebase},
 		Trash:     &Trash{firebase: firebase},
