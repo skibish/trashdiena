@@ -10,7 +10,7 @@ import (
 
 // API is a structure that contains API for the bot
 type API struct {
-	slackClient *slack.Slack
+	slackClient slack.ISlack
 	db          *storage.Storage
 	server      *http.Server
 }

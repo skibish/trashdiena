@@ -9,6 +9,9 @@ import (
 
 func (a *API) handlerInit(w http.ResponseWriter, r *http.Request) {
 	code := r.URL.Query().Get("code")
+	if code == "" {
+		return
+	}
 
 	resp, err := a.slackClient.OAuthAccess(code)
 	if err != nil {

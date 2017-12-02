@@ -17,6 +17,11 @@ type Slack struct {
 	redirectURL  string
 }
 
+// ISlack is an interface that Slack is implementing
+type ISlack interface {
+	OAuthAccess(code string) (r *OAuthAccessResponse, err error)
+}
+
 // OAuthAccessAPIResponse is a respone for OAuthAccess request
 type OAuthAccessAPIResponse struct {
 	Ok              bool   `json:"ok"`
