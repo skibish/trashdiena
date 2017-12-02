@@ -1,6 +1,6 @@
 # A Self-Documenting Makefile: http://marmelab.com/blog/2016/02/29/auto-documented-makefile.html
 
-VERSION = 1.1.0
+VERSION = 1.1.1
 
 .PHONY: test build push
 .DEFAULT_GOAL := help
