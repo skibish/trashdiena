@@ -2,6 +2,7 @@ package slack
 
 import (
 	"encoding/json"
+	"errors"
 	"net/http"
 	"net/url"
 	"strings"
@@ -19,6 +20,7 @@ type Slack struct {
 // OAuthAccessAPIResponse is a respone for OAuthAccess request
 type OAuthAccessAPIResponse struct {
 	Ok              bool   `json:"ok"`
+	Error           string `json:"error"`
 	AccessToken     string `json:"access_token"`
 	Scope           string `json:"scope"`
 	UserID          string `json:"user_id"`
@@ -82,6 +84,11 @@ func (s *Slack) OAuthAccess(code string) (r *OAuthAccessResponse, err error) {
 	var jsonResponse OAuthAccessAPIResponse
 	err = json.NewDecoder(res.Body).Decode(&jsonResponse)
 	if err != nil {
+		return
+	}
+
+	if jsonResponse.Ok == false {
+		err = errors.New(jsonResponse.Error)
 		return
 	}
 
