@@ -18,6 +18,7 @@ type Firebase struct {
 type IFirebase interface {
 	Set(path string, v interface{}) (err error)
 	Get(path string) (result json.RawMessage, err error)
+	FilterEqual(path, field string, value interface{}) (result json.RawMessage, err error)
 }
 
 // New return new instance of the Firebase
@@ -60,6 +61,18 @@ func (f *Firebase) Get(path string) (result json.RawMessage, err error) {
 	}
 
 	err = ref.Value(&result)
+
+	return
+}
+
+// FilterEqual filter records with field equal to specific value
+func (f *Firebase) FilterEqual(path, field string, value interface{}) (result json.RawMessage, err error) {
+	ref, err := f.realFirebase.Ref(path)
+	if err != nil {
+		return
+	}
+
+	err = ref.OrderBy(field).EqualToValue(value).Value(&result)
 
 	return
 }

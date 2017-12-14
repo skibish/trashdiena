@@ -36,7 +36,7 @@ func TestTrashSetErr(t *testing.T) {
 
 func TestGetNotPublished(t *testing.T) {
 	fm := &mockFirebase{}
-	fm.get = func(path string) (result json.RawMessage, err error) {
+	fm.filterEqual = func(path, field string, value interface{}) (result json.RawMessage, err error) {
 		return []byte(`{"12":{"id":"12","data":"aaa","published":true},"23":{"id":"23","data":"bbb","published":false}}`), nil
 	}
 
@@ -55,7 +55,7 @@ func TestGetNotPublished(t *testing.T) {
 
 func TestGetNotPublishedErr(t *testing.T) {
 	fm := &mockFirebase{}
-	fm.get = func(path string) (result json.RawMessage, err error) {
+	fm.filterEqual = func(path, field string, value interface{}) (result json.RawMessage, err error) {
 		return []byte(``), errors.New("Oops")
 	}
 

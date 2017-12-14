@@ -31,7 +31,7 @@ func (t *Trash) Set(trash *TrashData) (err error) {
 
 // GetNotPublished return all not published records
 func (t *Trash) GetNotPublished() (finResult map[string]*TrashData, err error) {
-	result, err := t.firebase.Get(trashPath)
+	result, err := t.firebase.FilterEqual(trashPath, "published", false)
 	if err != nil {
 		return
 	}

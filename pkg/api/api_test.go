@@ -13,8 +13,9 @@ import (
 )
 
 type mockFirebase struct {
-	set func(path string, v interface{}) (err error)
-	get func(path string) (result json.RawMessage, err error)
+	set         func(path string, v interface{}) (err error)
+	get         func(path string) (result json.RawMessage, err error)
+	filterEqual func(path, field string, value interface{}) (result json.RawMessage, err error)
 }
 
 func (m mockFirebase) Set(path string, v interface{}) (err error) {
@@ -22,6 +23,9 @@ func (m mockFirebase) Set(path string, v interface{}) (err error) {
 }
 func (m mockFirebase) Get(path string) (result json.RawMessage, err error) {
 	return m.get(path)
+}
+func (m mockFirebase) FilterEqual(path, field string, value interface{}) (result json.RawMessage, err error) {
+	return m.filterEqual(path, field, value)
 }
 
 type mockSlack struct {
