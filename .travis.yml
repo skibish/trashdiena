@@ -25,5 +25,5 @@ after_success:
     docker build -t skibish/trashdiena:$TRAVIS_TAG -t skibish/trashdiena:latest .;
     docker push skibish/trashdiena:$TRAVIS_TAG;
     docker push skibish/trashdiena:latest;
-    ssh -i /tmp/rsa $DEPLOY_USER@app.trashdiena.fun "/opt/app/update-stack.sh $TRAVIS_TAG"
+    ssh -i /tmp/rsa $DEPLOY_USER@app.trashdiena.fun "/opt/app/update-stack.sh $TRAVIS_TAG";
     fi
