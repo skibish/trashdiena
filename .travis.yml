@@ -13,7 +13,7 @@ script:
 after_success:
   - if [ -n "$TRAVIS_TAG" ]; then
     docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD";
-    docker build -t skibish/trashdiena:$TRAVIS_TAG -t skibish/trashdiena:latest .
-    docker push skibish/trashdiena:$TRAVIS_TAG
-    docker push skibish/trashdiena:latest
+    docker build -t skibish/trashdiena:$TRAVIS_TAG -t skibish/trashdiena:latest .;
+    docker push skibish/trashdiena:$TRAVIS_TAG;
+    docker push skibish/trashdiena:latest;
     fi
