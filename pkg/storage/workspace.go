@@ -40,3 +40,11 @@ func (w *Workspace) GetAll() (finResult map[string]WorkspaceData, err error) {
 
 	return
 }
+
+// Delete deletes workspace data
+func (w *Workspace) Delete(wd WorkspaceData) (err error) {
+	refKey := fmt.Sprintf("%s/%s:%s", workspacePath, wd.ID, wd.ChannelID)
+	err = w.firebase.Delete(refKey)
+
+	return
+}

@@ -19,6 +19,7 @@ type IFirebase interface {
 	Set(path string, v interface{}) (err error)
 	Get(path string) (result json.RawMessage, err error)
 	FilterEqual(path, field string, value interface{}) (result json.RawMessage, err error)
+	Delete(path string) (err error)
 }
 
 // New return new instance of the Firebase
@@ -61,6 +62,18 @@ func (f *Firebase) Get(path string) (result json.RawMessage, err error) {
 	}
 
 	err = ref.Value(&result)
+
+	return
+}
+
+// Delete deletes record from the database
+func (f *Firebase) Delete(path string) (err error) {
+	ref, err := f.realFirebase.Ref(path)
+	if err != nil {
+		return
+	}
+
+	err = ref.Remove()
 
 	return
 }

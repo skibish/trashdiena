@@ -65,3 +65,16 @@ func TestWorkspaceGetAllErr(t *testing.T) {
 		t.Error("Should be error, but everything is OK")
 	}
 }
+
+func TestWorkspaceDelete(t *testing.T) {
+	fm := &mockFirebase{}
+	fm.delete = func(path string) (err error) {
+		return nil
+	}
+
+	wp := Workspace{firebase: fm}
+	err := wp.Delete(WorkspaceData{ChannelID: "123", ID: "321", WebhookURL: "http://a/b/c"})
+	if err != nil {
+		t.Errorf("Error was not expected: %v", err)
+	}
+}

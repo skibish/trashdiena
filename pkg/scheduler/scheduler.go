@@ -92,15 +92,17 @@ func (s *Scheduler) publish() (err error) {
 		break
 	}
 
-	// send trash to all published workspaces
+	// send trash to all subscribed workspaces
 	for _, v := range workspaces {
-		go func(wh string) {
+		go func(wd storage.WorkspaceData) {
 			json := []byte(fmt.Sprintf("{\"text\":%q}", trash))
-			_, err := http.Post(wh, "application/json", bytes.NewBuffer(json))
+			_, err := http.Post(wd.WebhookURL, "application/json", bytes.NewBuffer(json))
 			if err != nil {
+				log.Printf("Deleting workspace \"%s:%s\" because failed to POST", wd.ChannelID, wd.ID)
+				s.sg.Workspace.Delete(wd)
 				return
 			}
-		}(v.WebhookURL)
+		}(v)
 	}
 
 	return
